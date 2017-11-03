@@ -24,7 +24,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          preset: [
+          presets: [
             'react',
             'stage-0',
             ['env', { target: { browsers: ['last 2 versions'] } }]
