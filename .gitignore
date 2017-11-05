@@ -8,6 +8,7 @@
 
 # production
 server/build
+server/public
 
 # creds
 serviceAccountKey.json
