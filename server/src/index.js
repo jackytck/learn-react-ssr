@@ -1,3 +1,4 @@
+import createStore from './helpers/createStore'
 import express from 'express'
 import renderer from './helpers/renderer'
 
@@ -6,7 +7,12 @@ const app = express()
 app.use(express.static('public'))
 
 app.get('*', (req, res) => {
-  res.send(renderer(req))
+  const store = createStore()
+
+  // @todo: some logic to initialize
+  // and load data into the store
+
+  res.send(renderer(req, store))
 })
 
 app.listen(3000, () => {
