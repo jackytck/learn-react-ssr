@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Routes from './Routes'
+import reducers from './reducers'
 import thunk from 'redux-thunk'
 
 const store = createStore(reducers, {}, applyMiddleware(thunk))
