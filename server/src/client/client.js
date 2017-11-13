@@ -1,3 +1,5 @@
+import 'babel-polyfill'
+
 import { applyMiddleware, createStore } from 'redux'
 
 import { BrowserRouter } from 'react-router-dom'
