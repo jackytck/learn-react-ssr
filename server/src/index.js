@@ -13,10 +13,13 @@ app.use(express.static('public'))
 app.get('*', (req, res) => {
   const store = createStore()
 
-  const routes = matchRoutes(Routes, req.path)
-  console.log(routes)
+  const promises = matchRoutes(Routes, req.path).map(({ route }) => {
+    return route.loadData ? route.loadData(store) : null
+  })
 
-  res.send(renderer(req, store))
+  Promise.all(promises).then(() => {
+    res.send(renderer(req, store))
+  })
 })
 
 app.listen(3000, () => {
