@@ -1,4 +1,4 @@
-import adminsersReducer from './adminsReducer'
+import adminsReducer from './adminsReducer'
 import authReducer from './authReducer'
 import { combineReducers } from 'redux'
 import usersReducer from './usersReducer'
